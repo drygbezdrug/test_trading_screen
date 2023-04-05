@@ -17,7 +17,7 @@ class StockValue extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                    left: 35,
+                    left: 40,
                     child: SvgPicture.asset(Assets.images.ladderRed.path)),
                 ListView.builder(
                   shrinkWrap: false,
@@ -56,12 +56,12 @@ class StockValue extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 70,
+            height: 80,
             child: Stack(
               alignment: Alignment.centerRight,
               children: [
                 Positioned(
-                    left: 20,
+                    left: 25,
                     child: SvgPicture.asset(Assets.images.ladderGreen.path)),
                 ListView.builder(
                   shrinkWrap: false,

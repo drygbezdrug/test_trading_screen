@@ -32,7 +32,7 @@ class _DropDownWidgetState extends State<DropDownWidget> {
               const BoxDecoration(color: Color.fromARGB(119, 88, 85, 100)),
           child: DropdownButtonHideUnderline(
             child: DropdownButton(
-              isExpanded: false,
+              isExpanded: true,
               iconSize: 16,
               dropdownColor: CryptoTheme.deepGrey,
               iconEnabledColor: CryptoTheme.white,
