@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme.dart';
 
@@ -33,7 +32,7 @@ class _DropDownWidgetState extends State<DropDownWidget> {
               const BoxDecoration(color: Color.fromARGB(119, 88, 85, 100)),
           child: DropdownButtonHideUnderline(
             child: DropdownButton(
-              isExpanded: true,
+              isExpanded: false,
               iconSize: 16,
               dropdownColor: CryptoTheme.deepGrey,
               iconEnabledColor: CryptoTheme.white,
