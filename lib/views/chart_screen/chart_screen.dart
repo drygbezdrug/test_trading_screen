@@ -22,6 +22,60 @@ class ChartScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: SvgPicture.asset(
+                          Assets.images.align.path,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          'BTC/USDT',
+                          style:
+                              TextStyle(fontSize: 18, color: CryptoTheme.white),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: CryptoTheme.lightGreen,
+                        ),
+                        height: 25,
+                        alignment: Alignment.center,
+                        child: const FittedBox(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4),
+                            child: Text(
+                              '+2.38%',
+                              style: TextStyle(color: CryptoTheme.green),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SvgPicture.asset(Assets.images.chartUpDown.path),
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.more_horiz_outlined,
+                                size: 24,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Row(
                   children: [
                     Expanded(
@@ -32,40 +86,6 @@ class ChartScreen extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SvgPicture.asset(
-                                    Assets.images.align.path,
-                                  ),
-                                  Text(
-                                    'BTC/USDT',
-                                    style: TextStyle(
-                                        fontSize: 18, color: CryptoTheme.white),
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: CryptoTheme.lightGreen,
-                                    ),
-                                    height: 25,
-                                    width: 60,
-                                    alignment: Alignment.center,
-                                    child: const Text(
-                                      '+2.38%',
-                                      style:
-                                          TextStyle(color: CryptoTheme.green),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
                             const InputWidget(
                               text: '43,805.35',
                               color: CryptoTheme.white,
@@ -125,7 +145,7 @@ class ChartScreen extends StatelessWidget {
                             ),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                minimumSize: Size.fromHeight(40),
+                                minimumSize: const Size.fromHeight(40),
                                 backgroundColor: CryptoTheme.green,
                               ),
                               child: const Text(
@@ -140,51 +160,30 @@ class ChartScreen extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 4.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SvgPicture.asset(
-                                      Assets.images.chartUpDown.path),
-                                  IconButton(
-                                    iconSize: 24,
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.more_horiz_outlined),
-                                  ),
-                                ],
-                              ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: 16.0),
+                            child: StockValue(),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 16, right: 16.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Flexible(
+                                    flex: 1, child: DropDownWidget()),
+                                SvgPicture.asset(Assets.images.tableSort.path),
+                              ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 16.0),
-                              child: StockValue(),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 16, right: 16.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  const DropDownWidget(),
-                                  Spacer(
-                                    flex: 1,
-                                  ),
-                                  SvgPicture.asset(
-                                      Assets.images.tableSort.path),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     )
                   ],
@@ -198,7 +197,6 @@ class ChartScreen extends StatelessWidget {
                           children: [
                             TextButton(
                                 style: TextButton.styleFrom(
-                                    
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(7)),
                                     backgroundColor: CryptoTheme.deepGrey),
@@ -240,7 +238,7 @@ class ChartScreen extends StatelessWidget {
                                 selectedColor: CryptoTheme.blue,
                                 selectedIconColor: CryptoTheme.white,
                                 borderColor: CryptoTheme.blue,
-                                checkIcon: Icon(
+                                checkIcon: const Icon(
                                   Icons.check,
                                 )),
                             const Text(
@@ -268,7 +266,7 @@ class ChartScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                CurrencyOrders(),
+                const CurrencyOrders(),
               ],
             ),
           ),

@@ -15,19 +15,27 @@ class InputWidget extends StatelessWidget {
         color: CryptoTheme.deepGrey,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.remove_outlined),
           ),
-          const Spacer(),
-          FittedBox(
-            child: Text(
-              text,
-              style: TextStyle(color: color),
+          const Spacer(
+            flex: 1,
+          ),
+          Flexible(
+            flex: 8,
+            child: FittedBox(
+              child: Text(
+                text,
+                style: TextStyle(color: color),
+              ),
             ),
           ),
-          const Spacer(),
+          const Spacer(
+            flex: 1,
+          ),
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.add),

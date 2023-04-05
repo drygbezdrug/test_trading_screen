@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         iconTheme: const IconThemeData(color: CryptoTheme.grey, size: 16),
       ),
-      home: Scaffold(
+      home: const Scaffold(
         body: ChartScreen(),
       ),
     );

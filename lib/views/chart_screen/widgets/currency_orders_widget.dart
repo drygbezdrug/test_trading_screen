@@ -18,7 +18,7 @@ class CurrencyOrders extends StatelessWidget {
           children: [
             const Divider(),
             ListTile(
-              contentPadding: EdgeInsets.only(left: 16, right: 16),
+              contentPadding: const EdgeInsets.only(left: 16, right: 16),
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -40,7 +40,7 @@ class CurrencyOrders extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   )
                 ],

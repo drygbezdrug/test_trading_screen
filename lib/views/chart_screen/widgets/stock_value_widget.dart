@@ -9,18 +9,18 @@ class StockValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 14.0),
+      padding: const EdgeInsets.only(right: 16.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SizedBox(
-            height: 100,
+            height: 70,
             child: Stack(
-              alignment: Alignment.centerRight,
               children: [
-                SvgPicture.asset(Assets.images.ladderRed.path),
+                Positioned(
+                    left: 35,
+                    child: SvgPicture.asset(Assets.images.ladderRed.path)),
                 ListView.builder(
-                  shrinkWrap: true,
+                  shrinkWrap: false,
                   itemCount: _val1.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
@@ -56,13 +56,15 @@ class StockValue extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 100,
+            height: 70,
             child: Stack(
               alignment: Alignment.centerRight,
               children: [
-                SvgPicture.asset(Assets.images.ladderGreen.path),
+                Positioned(
+                    left: 20,
+                    child: SvgPicture.asset(Assets.images.ladderGreen.path)),
                 ListView.builder(
-                  shrinkWrap: true,
+                  shrinkWrap: false,
                   itemCount: _val2.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {

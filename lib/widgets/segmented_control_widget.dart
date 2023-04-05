@@ -13,7 +13,6 @@ class SegmentedControlWidget extends StatefulWidget {
 }
 
 Tabs _selectedSegment = Tabs.charts;
-Color? _color = CryptoTheme.deepGrey;
 
 class _SegmentedControlWidgetState extends State<SegmentedControlWidget> {
   @override
@@ -26,17 +25,14 @@ class _SegmentedControlWidgetState extends State<SegmentedControlWidget> {
           thumbColor: CryptoTheme.deepGrey,
           backgroundColor: CryptoTheme.deepDarkGrey,
           children: <Tabs, Widget>{
-            Tabs.charts: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: Text(
-                Tabs.charts.name,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: _selectedSegment == Tabs.charts
-                        ? CryptoTheme.white
-                        : CryptoTheme.grey,
-                    fontSize: 14),
-              ),
+            Tabs.charts: Text(
+              Tabs.charts.name,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: _selectedSegment == Tabs.charts
+                      ? CryptoTheme.white
+                      : CryptoTheme.grey,
+                  fontSize: 14),
             ),
             Tabs.trade: Text(
               Tabs.trade.name,
