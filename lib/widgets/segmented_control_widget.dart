@@ -27,7 +27,7 @@ class _SegmentedControlWidgetState extends State<SegmentedControlWidget> {
           backgroundColor: CryptoTheme.deepDarkGrey,
           children: <Tabs, Widget>{
             Tabs.charts: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 65),
+              padding: EdgeInsets.symmetric(horizontal: 50),
               child: Text(
                 Tabs.charts.name,
                 textAlign: TextAlign.center,

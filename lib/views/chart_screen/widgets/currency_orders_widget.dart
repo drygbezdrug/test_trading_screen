@@ -11,6 +11,7 @@ class CurrencyOrders extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemCount: _mockdata.length,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         final curPair = _mockdata[index];
         return Column(

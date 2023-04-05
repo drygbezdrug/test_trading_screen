@@ -10,7 +10,6 @@ class CustomStepper extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 40,
-      width: 200,
       child: FittedBox(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

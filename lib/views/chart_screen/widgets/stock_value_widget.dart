@@ -8,98 +8,87 @@ class StockValue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        SizedBox(
-          height: 76,
-          width: 100,
-          child: Stack(
-            alignment: Alignment.centerRight,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 25.0),
-                child: SvgPicture.asset(Assets.images.ladderRed.path),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: _val1.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  final element = _val1[index];
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        element['price'],
-                        style: const TextStyle(
-                            fontSize: 11, color: CryptoTheme.red),
-                      ),
-                      Text(element['amount'],
-                          style: const TextStyle(
-                              fontSize: 11, color: CryptoTheme.white)),
-                    ],
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
-        const ListTile(
-          title: Text(
-            '43,810.58',
-            style: TextStyle(
-              fontSize: 14,
-              color: CryptoTheme.green,
-            ),
-          ),
-          subtitle: Text(
-            '~\$43,810.58',
-            style: TextStyle(
-              fontSize: 10,
-              color: CryptoTheme.grey,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 71,
-          width: 100,
-          child: Stack(
-            alignment: Alignment.centerRight,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 30.0),
-                child: SvgPicture.asset(Assets.images.ladderGreen.path),
-              ),
-              ListView.builder(
-                shrinkWrap: false,
-                itemCount: _val2.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  final element = _val2[index];
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        element['price'],
-                        style: const TextStyle(
-                            fontSize: 11, color: CryptoTheme.green),
-                      ),
-                      Text(
-                        element['amount'],
-                        style: const TextStyle(
-                          fontSize: 11,
-                          color: CryptoTheme.white,
+    return Padding(
+      padding: const EdgeInsets.only(right: 14.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SizedBox(
+            height: 100,
+            child: Stack(
+              alignment: Alignment.centerRight,
+              children: [
+                SvgPicture.asset(Assets.images.ladderRed.path),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: _val1.length,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final element = _val1[index];
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          element['price'],
+                          style: const TextStyle(color: CryptoTheme.red),
                         ),
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ],
+                        Text(element['amount'],
+                            style: const TextStyle(color: CryptoTheme.white)),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+          const ListTile(
+            title: Text(
+              '43,810.58',
+              style: TextStyle(
+                color: CryptoTheme.green,
+              ),
+            ),
+            subtitle: Text(
+              '~\$43,810.58',
+              style: TextStyle(
+                color: CryptoTheme.grey,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 100,
+            child: Stack(
+              alignment: Alignment.centerRight,
+              children: [
+                SvgPicture.asset(Assets.images.ladderGreen.path),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: _val2.length,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final element = _val2[index];
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          element['price'],
+                          style: const TextStyle(color: CryptoTheme.green),
+                        ),
+                        Text(
+                          element['amount'],
+                          style: const TextStyle(
+                            color: CryptoTheme.white,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

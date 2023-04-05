@@ -7,35 +7,32 @@ class InputWidget extends StatelessWidget {
   final Color? color;
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: CryptoTheme.deepGrey,
-        ),
-        height: 40,
-        width: 200,
-        child: Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.remove_outlined),
+    return Container(
+      height: 40,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: CryptoTheme.deepGrey,
+      ),
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.remove_outlined),
+          ),
+          const Spacer(),
+          FittedBox(
+            child: Text(
+              text,
+              style: TextStyle(color: color),
             ),
-            const Spacer(),
-            FittedBox(
-              child: Text(
-                text,
-                style: TextStyle(color: color),
-              ),
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.add),
-            ),
-          ],
-        ),
+          ),
+          const Spacer(),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }
