@@ -25,7 +25,7 @@ class _SegmentedControlWidgetState extends State<SegmentedControlWidget> {
         backgroundColor: CryptoTheme.deepDarkGrey,
         children: <Tabs, Widget>{
           Tabs.charts: SizedBox(
-            width: 130,
+            width: 146,
             child: Text(
               Tabs.charts.name,
               textAlign: TextAlign.center,
@@ -52,6 +52,7 @@ class _SegmentedControlWidgetState extends State<SegmentedControlWidget> {
             setState(
               () {
                 _selectedSegment = value;
+                
               },
             );
           }

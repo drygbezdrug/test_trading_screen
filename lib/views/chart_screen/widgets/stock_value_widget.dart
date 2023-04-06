@@ -13,7 +13,7 @@ class StockValue extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 70,
+            height: 81,
             child: Stack(
               children: [
                 Positioned(
@@ -56,7 +56,7 @@ class StockValue extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 80,
+            height: 81,
             child: Stack(
               alignment: Alignment.centerRight,
               children: [
