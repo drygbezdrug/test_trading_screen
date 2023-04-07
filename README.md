@@ -8,6 +8,7 @@ Test adaptive layout without functionality.
 
 Type to the terminal:
 $ flutter packages pub run build_runner build
+
 to get gen folder with type safe fonts and images.
 
 
