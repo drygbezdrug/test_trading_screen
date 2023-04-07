@@ -1,6 +1,6 @@
 # Trading screen
 
-Test task for employment in a company
+Task for employment in a company
 
 ## Description
 
